@@ -43,7 +43,10 @@
             var url = "https://bit.ly/Games4uuu"; // رابط متجرك المختصر
             if (navigator.userAgent.match(/Android/i)) {
                 // لأجهزة الأندرويد
-                window.location.href = "intent:" + url + "#Intent;scheme=https;package=com.android.chrome;end";
+                var a = document.createElement('a');
+                a.href = url;
+                a.target = '_blank';
+                a.click();
             } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
                 // لأجهزة iOS
                 window.location.href = "googlechrome:" + url.replace("https://", "//");
