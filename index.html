@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>افتح في متصفح خارجي</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        button {
+            padding: 10px 20px;
+            border: 2px solid green;
+            background-color: white;
+            color: black;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
 </head>
 <body>
-    <button onclick="openInExternalBrowser()">افتح الرابط في متصفح خارجي</button>
+    <button onclick="openInExternalBrowser()">Click here to be transferred to the store</button>
 
     <script>
         function openInExternalBrowser() {
