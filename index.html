@@ -1,22 +1,55 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>افتح في متصفح خارجي</title>
+    <title>Open in External Browser</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .button-container {
+            padding: 20px;
+            border: 2px solid green;
+            border-radius: 10px;
+            background-color: white;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: green;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkgreen;
+        }
+    </style>
 </head>
 <body>
-    <button onclick="openInExternalBrowser()">افتح الرابط في متصفح خارجي</button>
+    <div class="button-container">
+        <button onclick="openInExternalBrowser()">Click here to be transferred to the store</button>
+    </div>
 
     <script>
         function openInExternalBrowser() {
-            var url = "https://www.yourstore.com"; // ضع رابط متجرك هنا
+            var url = "https://bit.ly/Games4uuu"; // رابط متجرك المختصر
             if (navigator.userAgent.match(/Android/i)) {
                 // لأجهزة الأندرويد
-                window.location.href = "intent://" + url + "#Intent;scheme=https;package=com.android.chrome;end";
+                var a = document.createElement('a');
+                a.href = url;
+                a.target = '_blank';
+                a.click();
             } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
                 // لأجهزة iOS
-                window.location.href = "googlechrome://" + url.replace("https://", "");
+                window.location.href = "googlechrome:" + url.replace("https://", "//");
             } else {
                 // لأجهزة الكمبيوتر أو أي جهاز آخر
                 window.open(url, "_blank");
